@@ -84,5 +84,10 @@ cleanssh()
 }
 
 pp4() {
-    p4 edit $1 && $P4EDITOR $1
+    if [[ $P4EDITOR = "subl -w" ]]; then
+      PP4EDITOR="subl"
+    else
+      PP4EDITOR="$P4EDITOR"
+    fi
+    p4 edit $1 && $PP4EDITOR $1
 }
