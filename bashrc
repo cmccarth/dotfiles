@@ -92,10 +92,12 @@ pp4() {
     p4 edit $1 && $PP4EDITOR $1
 }
 
-. $HOME/bin/ssh-find-agent.sh
-ssh-find-agent -a
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-   eval $(ssh-agent -s)
-   ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+if [[ $(uname -s) != Darwin ]]; then
+    . $HOME/bin/ssh-find-agent.sh
+    ssh-find-agent -a
+    if [ -z "$SSH_AUTH_SOCK" ]
+    then
+       eval $(ssh-agent -s)
+       ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+    fi
 fi
