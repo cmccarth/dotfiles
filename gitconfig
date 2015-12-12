@@ -1,7 +1,12 @@
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [user]
-	name = cmccarth
+        name = Christopher McCarthy
 	email = cmccarth@mathworks.com
+[core]
+        excludesfile = ~/.gitignore_global
+        pager = less -R
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[push]
+	default = matching
