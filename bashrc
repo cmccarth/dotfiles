@@ -94,6 +94,9 @@ pp4() {
 }
 
 if [[ $(uname -s) != Darwin ]]; then
+    export LS_OPTIONS="--color=auto"
+    eval "`dircolors`"
+    alias ls="ls $LS_OPTIONS"
     . $HOME/bin/ssh-find-agent.sh
     ssh-find-agent -a
     if [ -z "$SSH_AUTH_SOCK" ]
