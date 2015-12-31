@@ -24,6 +24,7 @@ export HISTIGNORE="&:c:clear:exit:cd ..:cd -"
 export HISTTIMEFORMAT="%F %T "
 export P4CONFIG=.perforce
 export P4MERGE=p4merge
+export P4IGNORE=".p4ignore;$HOME/.p4ignore"
 
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
