@@ -44,6 +44,10 @@ alias tm="tmux attach-session -t main"
 alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 
+if [[ -e $HOME/.ssh/ssh_command_only_config ]]; then
+  alias ssh="ssh -F $HOME/.ssh/ssh_command_only_config"
+fi
+
 pathto()
 {
     # http://unix.derkeiler.com/Newsgroups/comp.unix.programmer/2005-01/0195.html
