@@ -12,7 +12,7 @@ export PATH="$HOME/bin:/usr/local/netbin:/usr/local/bin:/opt/local/bin:/hub/shar
 export MANPATH="${MANPATH}:/local/share/man:/usr/local/share/man"
 
 export P4USER="cmccarth"
-export PAGER="less"
+export PAGER="less -R"
 export LC_COLLATE="C"
 export LESS="-M"
 export ORGANIZATION="MathWorks"
