@@ -1,5 +1,5 @@
 if [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
-    MYEDITOR="subl -w"
+    MYEDITOR="atom -w"
 elif which vim > /dev/null 2>&1; then
     MYEDITOR="vim"
 else
