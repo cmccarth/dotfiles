@@ -11,3 +11,5 @@ if [[ -f ~/.bashrc ]]; then
 fi
 
 stty sane
+
+eval "$(pyenv init -)"
