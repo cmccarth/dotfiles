@@ -1,6 +1,6 @@
 if [[ -f /etc/bashrc ]]; then
     source /etc/bashrc
-	unset PROMPT_COMMAND
+    unset PROMPT_COMMAND
 fi
 
 set -o vi
@@ -45,7 +45,7 @@ alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 
 if [[ -e $HOME/.ssh/ssh_command_only_config ]]; then
-  alias ssh="ssh -F $HOME/.ssh/ssh_command_only_config"
+    alias ssh="ssh -F $HOME/.ssh/ssh_command_only_config"
 fi
 
 pathto()
@@ -54,30 +54,30 @@ pathto()
     # make sure file is specified
     if [ -z "$1" ]
     then
-       echo "$0 <path>"
-       return 1
+        echo "$0 <path>"
+        return 1
     fi
     # already absolute case
     if [ "${1:0:1}" = "/" ] || [ "$PWD" = "/" ]
     then
-       ABS=""
+        ABS=""
     else
-       ABS="$PWD"
+        ABS="$PWD"
     fi
     # loop thru path
     IFS="/"
     for DIR in $1
     do
-       if [ -n "$DIR" ]
-       then
-          if [ "$DIR" = ".." ]
-          then
-             ABS="${ABS%/*}"
-          elif [ "$DIR" != "." ]
-          then
-             ABS="$ABS/$DIR"
-          fi
-       fi
+        if [ -n "$DIR" ]
+        then
+            if [ "$DIR" = ".." ]
+            then
+                ABS="${ABS%/*}"
+            elif [ "$DIR" != "." ]
+            then
+                ABS="$ABS/$DIR"
+            fi
+        fi
     done
     IFS=":"
     echo $ABS
@@ -91,9 +91,9 @@ cleanssh()
 
 pp4() {
     if [[ $P4EDITOR = "subl -w" ]]; then
-      PP4EDITOR="subl"
+        PP4EDITOR="subl"
     else
-      PP4EDITOR="$P4EDITOR"
+        PP4EDITOR="$P4EDITOR"
     fi
     p4 edit $1 && $PP4EDITOR $1
 }
@@ -103,11 +103,16 @@ if [[ $(uname -s) != Darwin ]]; then
     eval "`dircolors`"
     alias ls="ls $LS_OPTIONS"
     if [[ $(hostname) == "cmccarth2-deb7-64" ]]; then
-      . $HOME/bin/ssh-find-agent.sh
-      ssh-find-agent -a
-      if [ -z "$SSH_AUTH_SOCK" ]; then
-         eval $(ssh-agent -s)
-         ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-      fi
+        . $HOME/bin/ssh-find-agent.sh
+        ssh-find-agent -a
+        if [ -z "$SSH_AUTH_SOCK" ]; then
+            eval $(ssh-agent -s)
+            ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+        fi
+    fi
+else
+    HISTORY_LOG_DIR="$HOME/Dropbox/Logs/bash-history"
+    if [[ -d $HISTORY_LOG_DIR ]]; then
+        export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then if [[ `history 1 | cut -f 3 -d " "` -ne 500 ]]; then echo "$(hostname -s):$(pwd) $(history 1)" >> ${HISTORY_LOG_DIR}/bash-history-$(date "+%Y-%m-%d").log; fi; fi'
     fi
 fi
