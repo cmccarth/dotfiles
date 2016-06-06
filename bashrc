@@ -102,7 +102,7 @@ if [[ $(uname -s) != Darwin ]]; then
     export LS_OPTIONS="--color=auto"
     eval "`dircolors`"
     alias ls="ls $LS_OPTIONS"
-    if [[ $(hostname) == "cmccarth2-deb7-64" ]]; then
+    if [[ $(hostname) =~ cmccarth[0-9]?-deb7-64  ]]; then
         . $HOME/bin/ssh-find-agent.sh
         ssh-find-agent -a
         if [ -z "$SSH_AUTH_SOCK" ]; then
