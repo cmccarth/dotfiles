@@ -19,7 +19,7 @@ export ORGANIZATION="MathWorks"
 export CLICOLOR=YES
 export GPG_TTY=`tty`
 
-export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
 export HISTIGNORE="&:c:clear:exit:cd ..:cd -"
 export HISTTIMEFORMAT="%F %T "
 export P4CONFIG=.perforce
