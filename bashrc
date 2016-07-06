@@ -31,8 +31,6 @@ export P4CONFIG=.perforce
 export P4MERGE=p4merge
 export P4IGNORE=".p4ignore;$HOME/.p4ignore"
 
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
 export EDITOR=$MYEDITOR
 export P4EDITOR=$MYEDITOR
 export VISUAL=$MYEDITOR
@@ -42,19 +40,13 @@ alias c="clear"
 alias dhcphost="host -l dhcp.mathworks.com | grep -i "
 alias bsem="ssh -x root@bsemaster"
 alias deb7="ssh -x cmccarth@cmccarth2-deb7-64"
-#alias deb8="ssh -x cmccarth@cmccarth-deb8-64.dhcp.mathworks.com"
-alias deb8="mosh cmccarth@cmccarth-deb8-64.dhcp.mathworks.com"
-#alias aga="ssh -x chris@agathon.dhcp.mathworks.com"
-alias aga="mosh chris@agathon.dhcp.mathworks.com"
+alias deb8="ssh -x cmccarth@cmccarth-deb8-64.dhcp.mathworks.com"
+alias aga="ssh -x chris@agathon.dhcp.mathworks.com"
 alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
 alias gitdir="cd /mathworks/devel/sandbox/cmccarth/scm/git"
-alias tm="tmux attach-session -t main"
 alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
-
-if [[ -e $HOME/.ssh/ssh_command_only_config ]]; then
-    alias ssh="ssh -F $HOME/.ssh/ssh_command_only_config"
-fi
+alias cleanssh='ssh-keygen -R $(history -p !$)'
 
 pathto()
 {
@@ -92,35 +84,14 @@ pathto()
     return 0
 }
 
-cleanssh()
-{
-    ssh-keygen -R $1
-}
-
-pp4() {
-    if [[ $P4EDITOR = "subl -w" ]]; then
-        PP4EDITOR="subl"
-    else
-        PP4EDITOR="$P4EDITOR"
-    fi
-    p4 edit $1 && $PP4EDITOR $1
-}
-
 if [[ $(uname -s) != Darwin ]]; then
     export LS_OPTIONS="--color=auto"
     eval "`dircolors`"
     alias ls="ls $LS_OPTIONS"
-    if [[ $(hostname) =~ cmccarth[0-9]?-deb[78]-64  ]]; then
-        . $HOME/bin/ssh-find-agent.sh
-        ssh-find-agent -a
-        if [ -z "$SSH_AUTH_SOCK" ]; then
-            eval $(ssh-agent -s)
-            ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-        fi
-    fi
-else
-    HISTORY_LOG_DIR="$HOME/Dropbox/Logs/bash-history"
-    if [[ -d $HISTORY_LOG_DIR ]]; then
-        export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then if [[ `history 1 | cut -f 3 -d " "` -ne 500 ]]; then echo "$(hostname -s):$(pwd) $(history 1)" >> ${HISTORY_LOG_DIR}/bash-history-$(date "+%Y-%m-%d").log; fi; fi'
+    . $HOME/bin/ssh-find-agent.sh
+    ssh-find-agent -a
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval $(ssh-agent -s)
+        ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
     fi
 fi
