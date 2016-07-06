@@ -19,7 +19,12 @@ export ORGANIZATION="MathWorks"
 export CLICOLOR=YES
 export GPG_TTY=`tty`
 
-export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
+if [[ $(hostname) =~ korriban  ]]; then
+    export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
+else
+    export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+fi
+
 export HISTIGNORE="&:c:clear:exit:cd ..:cd -"
 export HISTTIMEFORMAT="%F %T "
 export P4CONFIG=.perforce
