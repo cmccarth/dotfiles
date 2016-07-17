@@ -13,9 +13,3 @@ fi
 stty sane
 
 eval "$(pyenv init -)"
-
-if git -C ~/dotfiles remote update > /dev/null && git -C ~/dotfiles status -uno | grep --silent "^Your branch is up-to-date with 'origin/master'.$"; then
-    :
-else
-    echo "dotfiles are out of date"
-fi
