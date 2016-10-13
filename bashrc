@@ -47,6 +47,7 @@ alias gitdir="cd /mathworks/devel/sandbox/cmccarth/scm/git"
 alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
+alias dynastat='ssh -l root -t dynapro tmux attach'
 
 pathto()
 {
