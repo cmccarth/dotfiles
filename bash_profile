@@ -12,4 +12,5 @@ fi
 
 stty sane
 
-eval "$(pyenv init -)"
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
