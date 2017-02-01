@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.DS_Store
+._*
+.python-version
+*.bak
+.idea
+tags
