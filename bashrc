@@ -19,13 +19,14 @@ export ORGANIZATION="MathWorks"
 export CLICOLOR=YES
 export GPG_TTY=`tty`
 
-if [[ $(hostname) =~ korriban  ]]; then
-    export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
-elif [[ $(hostname) =~ agathon ]]; then
-    export PS1='[\u@\[\e[1m\]\[\e[34m\]\h\[\e[m\]:\w]\n\$ '
-else
-    export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
-fi
+# if [[ $(hostname) =~ korriban  ]]; then
+#     export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
+# elif [[ $(hostname) =~ agathon ]]; then
+#     export PS1='[\u@\[\e[1m\]\[\e[34m\]\h\[\e[m\]:\w]\n\$ '
+# else
+#     export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+# fi
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 export HISTIGNORE="&:c:clear:exit:cd ..:cd -"
 export HISTTIMEFORMAT="%F %T "
