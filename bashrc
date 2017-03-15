@@ -5,6 +5,19 @@ fi
 
 set -o vi
 
+# From https://github.com/mrzool/bash-sensible/blob/master/sensible.bash
+bind Space:magic-space
+bind "set show-all-if-ambiguous on"
+bind "set mark-symlinked-directories on"
+shopt -s histappend
+shopt -s cmdhist
+PROMPT_COMMAND='history -a'
+HISTSIZE=500000
+HISTFILESIZE=100000
+HISTCONTROL="erasedups:ignoreboth"
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+HISTTIMEFORMAT="%F %T "
+
 # So Perforce doesn't get confused...
 shopt -u interactive_comments
 
@@ -28,8 +41,6 @@ export GPG_TTY=`tty`
 # fi
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
-export HISTIGNORE="&:c:clear:exit:cd ..:cd -"
-export HISTTIMEFORMAT="%F %T "
 export P4CONFIG=.perforce
 export P4MERGE=p4merge
 export P4IGNORE=".p4ignore;$HOME/.p4ignore"
