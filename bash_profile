@@ -14,3 +14,5 @@ stty sane
 
 export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv 2> /dev/null > /dev/null; then eval "$(pyenv init -)"; fi
+
+[[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
