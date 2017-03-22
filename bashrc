@@ -21,7 +21,7 @@ HISTTIMEFORMAT="%F %T "
 # So Perforce doesn't get confused...
 shopt -u interactive_comments
 
-export PATH="$HOME/.pyenv/bin:$HOME/bin:/usr/local/netbin:/usr/local/bin:/opt/local/bin:/hub/share/bin:$HOME/.gem/ruby/1.8/bin:/Applications/p4merge.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/mathworks/hub/share/apps/bat/stable/share/"
+export PATH="$HOME/bin:/usr/local/netbin:/usr/local/bin:/opt/local/bin:/hub/share/bin:$HOME/.gem/ruby/1.8/bin:/Applications/p4merge.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/mathworks/hub/share/apps/bat/stable/share/"
 export MANPATH="${MANPATH}:/local/share/man:/usr/local/share/man"
 
 export P4USER="cmccarth"
