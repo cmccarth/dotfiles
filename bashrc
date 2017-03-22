@@ -62,6 +62,8 @@ alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmux attach'
+alias p=poo.py
+alias 💩=poo.py
 
 pathto()
 {
