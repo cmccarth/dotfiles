@@ -12,5 +12,10 @@ fi
 
 stty sane
 
-export PYENV_ROOT=/usr/local/var/pyenv
+if [[ $(hostname) == "cmccarth-deb8-64" ]]; then
+    export PYENV_ROOT=$HOME/.pyenv
+else
+    export PYENV_ROOT=/usr/local/var/pyenv
+fi
+
 if which pyenv 2> /dev/null > /dev/null; then eval "$(pyenv init -)"; fi
