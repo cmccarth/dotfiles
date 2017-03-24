@@ -12,12 +12,11 @@ fi
 
 stty sane
 
-if [[ $(hostname) == "cmccarth-deb8-64" ]]; then
-    export PYENV_ROOT=$HOME/.pyenv
-else
-    export PYENV_ROOT=/usr/local/var/pyenv
-fi
+export PYENV_ROOT=$HOME/.pyenv
 
-if which pyenv 2> /dev/null > /dev/null; then eval "$(pyenv init -)"; fi
+if [[ -d $PYENV_ROOT ]]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
 
 [[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
