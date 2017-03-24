@@ -39,6 +39,7 @@ export GPG_TTY=`tty`
 # else
 #     export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
 # fi
+
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 export P4CONFIG=.perforce
@@ -62,8 +63,8 @@ alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmux attach'
-alias p=poo.py
-alias 💩=poo.py
+alias p=pool.py
+alias 💩=pool.py
 
 pathto()
 {
