@@ -40,8 +40,8 @@ export GPG_TTY=`tty`
 #     export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
 # fi
 
-export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
-#[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+# export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 export P4CONFIG=.perforce
 export P4MERGE=p4merge

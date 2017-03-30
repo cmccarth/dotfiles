@@ -19,4 +19,4 @@ if [[ -d $PYENV_ROOT ]]; then
     eval "$(pyenv init -)"
 fi
 
-#[[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
+[[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
