@@ -20,3 +20,5 @@ if [[ -d $PYENV_ROOT ]]; then
 fi
 
 [[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
+
+eval "$(thefuck --alias)"
