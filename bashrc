@@ -57,15 +57,17 @@ alias dhcphost="host -l dhcp.mathworks.com | grep -i "
 alias bsem="ssh -x root@bsemaster"
 alias deb7="ssh -x cmccarth@cmccarth2-deb7-64"
 alias deb8="ssh -x cmccarth@cmccarth-deb8-64.dhcp.mathworks.com"
-alias aga="ssh -x chris@agathon.dhcp.mathworks.com"
+alias aga="ssh -x chris@agathon.mathworks.com"
 alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
 alias gitdir="cd /mathworks/devel/sandbox/cmccarth/scm/git"
 alias tmp4="tmux attach-session -t p4"
 alias os="openstack"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
-alias dynastat='ssh -l root -t dynapro tmux attach'
+alias dynastat='ssh -l root -t dynapro tmux attach -t dynapro'
+alias minidyna='ssh -l root -t dynapro tmux attach -t minidyna'
 alias p=pool.py
 alias 💩=pool.py
+alias aws='ssh -l ec2-user -i ~/.ssh/aws20170517 ec2-52-14-139-130.us-east-2.compute.amazonaws.com'
 
 pathto()
 {
