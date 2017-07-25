@@ -32,16 +32,16 @@ export ORGANIZATION="MathWorks"
 export CLICOLOR=YES
 export GPG_TTY=`tty`
 
-# if [[ $(hostname) =~ korriban  ]]; then
-#     export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
-# elif [[ $(hostname) =~ agathon ]]; then
-#     export PS1='[\u@\[\e[1m\]\[\e[34m\]\h\[\e[m\]:\w]\n\$ '
-# else
-#     export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
-# fi
+if [[ $(hostname) =~ korriban  ]]; then
+    export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
+elif [[ $(hostname) =~ agathon ]]; then
+    export PS1='[\u@\[\e[1m\]\[\e[34m\]\h\[\e[m\]:\w]\n\$ '
+else
+    export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+fi
 
 # export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+# [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 export P4CONFIG=.perforce
 export P4MERGE=p4merge
