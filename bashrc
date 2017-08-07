@@ -33,14 +33,13 @@ export CLICOLOR=YES
 export GPG_TTY=`tty`
 
 if [[ $(hostname) =~ korriban  ]]; then
-    export PS1='[\u@\[\e[1m\]\[\e[31m\]\h\[\e[m\]:\w]\n\$ '
+    PROMPT_COLOR="31"
 elif [[ $(hostname) =~ agathon ]]; then
-    export PS1='[\u@\[\e[1m\]\[\e[34m\]\h\[\e[m\]:\w]\n\$ '
-else
-    export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+    PROMPT_COLOR="34"
 fi
 
-# export PS1='[\u@\[\e[1m\]\h\[\e[m\]:\w]\n\$ '
+export PS1="[\u@\[\e[1m\]\[\e[${PROMPT_COLOR}m\]\h\[\e[m\]:${OS_ENV}\w]\n\$ "
+
 # [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 export P4CONFIG=.perforce
