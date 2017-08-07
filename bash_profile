@@ -12,13 +12,6 @@ fi
 
 stty sane
 
-export PYENV_ROOT=$HOME/.pyenv
-
-if [[ -d $PYENV_ROOT ]]; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
-
 [[ -f $HOME/.iterm2_shell_integration.bash ]] && source $HOME/.iterm2_shell_integration.bash
 
 eval "$(thefuck --alias)"

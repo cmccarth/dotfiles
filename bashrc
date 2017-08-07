@@ -115,3 +115,10 @@ if [[ $(uname -s) != Darwin ]]; then
         ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
     fi
 fi
+
+export PYENV_ROOT=$HOME/.pyenv
+
+if [[ -d $PYENV_ROOT ]]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
