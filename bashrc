@@ -64,7 +64,7 @@ alias os="openstack"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmux attach -t dynapro'
 alias minidyna='ssh -l root -t dynapro tmux attach -t minidyna'
-alias p=pool.py
+alias p='bm bat-pool'
 alias 💩=pool.py
 alias aws='ssh -l ec2-user -i ~/.ssh/aws20170517 ec2-52-14-139-130.us-east-2.compute.amazonaws.com'
 
