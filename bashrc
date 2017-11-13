@@ -104,6 +104,11 @@ pathto()
     return 0
 }
 
+title()
+{
+    echo -ne "\033]0;"$*"\007"
+}
+
 if [[ $(uname -s) != Darwin ]]; then
     export LS_OPTIONS="--color=auto"
     eval "`dircolors`"
