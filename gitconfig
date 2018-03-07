@@ -10,3 +10,9 @@
 	required = true
 [push]
 	default = matching
+[diff]
+	tool = filemerge
+[difftool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
+[difftool "filemerge"]
+    cmd = /Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $LOCAL -right $REMOTE
