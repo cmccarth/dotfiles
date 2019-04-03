@@ -52,21 +52,21 @@ alias dnsq="host -t axfr mathworks.com | grep -i "
 alias c="clear"
 alias dhcphost="host -l dhcp.mathworks.com | grep -i "
 alias bsem="ssh -x root@bsemaster"
-alias deb7="ssh -x cmccarth@cmccarth2-deb7-64"
-alias deb8="ssh -x cmccarth@cmccarth-deb8-64.dhcp.mathworks.com"
 alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
 alias aga="ssh -x chris@agathon.mathworks.com"
 alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
 alias gitdir="cd /mathworks/devel/sandbox/cmccarth/scm/git"
-alias os="openstack"
+alias os="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/openstack-client --os-cloud"
+alias gla="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
+alias nov="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
-alias minidyna='ssh -l root -t dynapro tmux attach -t minidyna'
 alias p='bm bat-pool'
-alias 💩=pool.py
 alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
-alias ubu='ssh cmccarth-ubu1804-64'
-alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/openstack-lsbat:/root/.ssh/openstack-lsbat cmccarth/kolla-ansible /bin/bash'
+alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh cmccarth/kolla-ansible /bin/bash'
+alias ap='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
+alias ans='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
+alias ansv='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
 
 pathto()
 {
@@ -102,6 +102,11 @@ pathto()
     IFS=":"
     echo $ABS
     return 0
+}
+
+gf()
+{
+    docker run --rm -it -v "$1:/$1" guestfs --rw --add "/$1"
 }
 
 title()
