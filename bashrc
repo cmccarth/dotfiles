@@ -56,17 +56,17 @@ alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
 alias aga="ssh -x chris@agathon.mathworks.com"
 alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
 alias gitdir="cd /mathworks/devel/sandbox/cmccarth/scm/git"
-alias os="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/openstack-client --os-cloud"
-alias gla="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
-alias nov="docker run -it --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
+alias os="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/openstack-client --os-cloud"
+alias gla="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
+alias nov="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
 alias p='bm bat-pool'
 alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
-alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh cmccarth/kolla-ansible /bin/bash'
-alias ap='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
-alias ans='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
-alias ansv='docker run -it --rm -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
+alias ka='docker run --rm -t -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh cmccarth/kolla-ansible /bin/bash'
+alias ap='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
+alias ans='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
+alias ansv='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
 
 pathto()
 {
