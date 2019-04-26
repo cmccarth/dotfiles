@@ -63,10 +63,11 @@ alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
 alias p='bm bat-pool'
 alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
-alias ka='docker run --rm -t -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh cmccarth/kolla-ansible /bin/bash'
-alias ap='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
-alias ans='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
-alias ansv='docker run --rm -t -v ${PWD}:/playbook -v ${HOME}/.ssh:/root/.ssh docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
+#alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh cmccarth/kolla-ansible /bin/bash'
+alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh docker.bserepo.mathworks.com/cmccarth/kolla-ansible-exec'
+alias ap='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
+alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
+alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
 
 pathto()
 {
