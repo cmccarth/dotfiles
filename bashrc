@@ -68,6 +68,7 @@ alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kol
 alias ap='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook'
 alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible'
 alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
+alias kk=kubectl
 
 pathto()
 {
