@@ -127,11 +127,22 @@ alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh
 alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-vault'
 alias kk=kubectl
 
-bindkey -v
-
 export PYENV_ROOT=$HOME/.pyenv
 
 if [[ -d $PYENV_ROOT ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
 fi
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/chris/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+bindkey -v
+# End of lines configured by zsh-newuser-install
