@@ -144,15 +144,22 @@ if [[ -d $PYENV_ROOT ]]; then
     eval "$(pyenv init -)"
 fi
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/chris/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    status
+    root_indicator
+    background_jobs
+    vi_mode
+    pyenv
+    history
+    time
+)
+
+POWERLEVEL9K_VI_INSERT_MODE_STRING=''
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
