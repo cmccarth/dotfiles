@@ -83,6 +83,7 @@ plugins=(
     pip
     tmux
     vscode
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
