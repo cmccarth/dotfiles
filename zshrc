@@ -76,6 +76,9 @@ plugins=(
     brew
     colored-man-pages
     colorize
+    docker
+    docker-compose
+    docker-machine
     git
     history-substring-search
     kubectl
