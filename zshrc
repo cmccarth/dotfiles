@@ -151,9 +151,15 @@ SAVEHIST=10000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    root_indicator
+    context
+    dir
+    vcs
+)
+
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     status
-    root_indicator
     background_jobs
     vi_mode
     pyenv
