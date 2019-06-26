@@ -175,3 +175,13 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 
 POWERLEVEL9K_VI_INSERT_MODE_STRING=''
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
+
+safe_ap () {
+    GIT_FETCH_RESULTS=`git fetch --dry-run 2>&1`
+    if [ -z $GIT_FETCH_RESULTS ]
+    then
+        docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook "$@"
+    else
+        echo "You need to pull first!"
+    fi
+}
