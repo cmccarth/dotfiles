@@ -11,7 +11,8 @@ export ZSH="/Users/chris/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -177,11 +178,14 @@ POWERLEVEL9K_VI_INSERT_MODE_STRING=''
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
 
 safe_ap () {
-    GIT_FETCH_RESULTS=`git fetch --dry-run 2>&1`
-    if [ -z $GIT_FETCH_RESULTS ]
+    if `git status > /dev/null 2>&1`
     then
-        docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook "$@"
-    else
-        echo "You need to pull first!"
+        GIT_FETCH_RESULTS=`git fetch --dry-run 2>&1`
+        if [ ! -z $GIT_FETCH_RESULTS ]
+        then
+            echo "You need to pull first!"
+            exit 1
+        fi
     fi
+    docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cmccarth/ansible-base ansible-playbook "$@"
 }
