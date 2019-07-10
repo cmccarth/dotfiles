@@ -11,8 +11,8 @@ export ZSH="/Users/chris/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -162,18 +162,16 @@ bindkey -v
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     root_indicator
+    context
     dir
     vcs
 )
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     status
-    context
     background_jobs
     vi_mode
     pyenv
-    history
-    time
 )
 
 POWERLEVEL9K_VI_INSERT_MODE_STRING=''
