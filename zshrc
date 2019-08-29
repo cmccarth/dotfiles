@@ -6,13 +6,15 @@ export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chris/.oh-my-zsh"
 
+ZSH_TMUX_AUTOSTART=true
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -177,15 +179,3 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 POWERLEVEL9K_VI_INSERT_MODE_STRING=''
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
 
-safe_ap () {
-    if `git status > /dev/null 2>&1`
-    then
-        GIT_FETCH_RESULTS=`git fetch --dry-run 2>&1`
-        if [ ! -z $GIT_FETCH_RESULTS ]
-        then
-            echo "You need to pull first!"
-            exit 1
-        fi
-    fi
-    docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-playbook "$@"
-}
