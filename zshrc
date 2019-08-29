@@ -147,6 +147,7 @@ alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh
 alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-vault'
 alias kk=kubectl
 alias da='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/dynapro-ansible-exec'
+alias deb10="ssh -x cmccarth@ah-cmccarth-l.dhcp.mathworks.com"
 
 export PYENV_ROOT=$HOME/.pyenv
 
@@ -167,6 +168,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     context
     dir
     vcs
+    virtualenv
 )
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
