@@ -90,6 +90,7 @@ plugins=(
     pip
     tmux
     vscode
+    zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
