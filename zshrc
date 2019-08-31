@@ -149,6 +149,7 @@ alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ss
 alias kk=kubectl
 alias da='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/dynapro-ansible-exec'
 alias deb10="ssh -x cmccarth@ah-cmccarth-l.dhcp.mathworks.com"
+alias ytd='docker run --rm -u $(id -u):$(id -g) -v $PWD:/data vimagick/youtube-dl'
 
 export PYENV_ROOT=$HOME/.pyenv
 
