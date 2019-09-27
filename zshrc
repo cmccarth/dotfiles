@@ -6,7 +6,7 @@ export PATH="$HOME/bin:/usr/local/bin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chris/.oh-my-zsh"
 
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
