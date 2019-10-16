@@ -128,27 +128,27 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dnsq="host -t axfr mathworks.com | grep -i "
-alias c="clear"
-alias dhcphost="host -l dhcp.mathworks.com | grep -i "
-alias bsem="ssh -x root@bsemaster"
-alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
 alias aga="ssh -x chris@agathon.mathworks.com"
-alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
-alias os="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cloud/openstack-client --os-cloud"
-alias gla="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
-alias nov="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
-alias cleanssh='ssh-keygen -R $(history -p !$)'
-alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
-alias p='bm bat-pool'
-alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
-alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh docker.bserepo.mathworks.com/cmccarth/kolla-ansible-exec'
-alias ap='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-playbook'
 alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible'
 alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-vault'
-alias kk=kubectl
+alias ap='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-playbook'
+alias bsem="ssh -x root@bsemaster"
+alias c="clear"
+alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias da='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/dynapro-ansible-exec'
 alias deb10="ssh -x cmccarth@ah-cmccarth-l.dhcp.mathworks.com"
+alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
+alias dhcphost="host -l dhcp.mathworks.com | grep -i "
+alias dnsq="host -t axfr mathworks.com | grep -i "
+alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
+alias gla="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
+alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh docker.bserepo.mathworks.com/cmccarth/kolla-ansible-exec'
+alias kk=kubectl
+alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
+alias nov="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
+alias os="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cloud/openstack-client --os-cloud"
+alias p='bm bat-pool'
+alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
 alias ytd='docker run --rm -u $(id -u):$(id -g) -v $PWD:/data vimagick/youtube-dl'
 
 export PYENV_ROOT=$HOME/.pyenv
@@ -182,4 +182,3 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 
 POWERLEVEL9K_VI_INSERT_MODE_STRING=''
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
-
