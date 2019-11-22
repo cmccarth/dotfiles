@@ -84,6 +84,7 @@ plugins=(
     docker-compose
     docker-machine
     git
+    globalias
     history-substring-search
     kubectl
     man
