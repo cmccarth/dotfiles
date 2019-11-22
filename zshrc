@@ -137,7 +137,7 @@ alias c="clear"
 alias ceph='docker run --rm -it -e MONITOR_HOSTS="$(cat /etc/ceph/ceph_monitor_hosts)" -e CEPH_KEYRING_BASE64="$(cat /etc/ceph/ceph.client.admin.keyring | base64)" docker.bserepo.mathworks.com/flaviostutz/ceph-client:latest ceph'
 alias cleanssh='ssh-keygen -R $(history -p !$)'
 alias da='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/dynapro-ansible-exec'
-alias deb10="ssh -x cmccarth@ah-cmccarth-l.dhcp.mathworks.com"
+alias deb10="ssh -x cmccarth@ah-cmccarth-l.mathworks.com"
 alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
 alias dhcphost="host -l dhcp.mathworks.com | grep -i "
 alias dnsq="host -t axfr mathworks.com | grep -i "
