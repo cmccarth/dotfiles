@@ -184,3 +184,12 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 
 POWERLEVEL9K_VI_INSERT_MODE_STRING=''
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="VI"
+
+# Reverse globalias's space mappings
+# control-space expands all aliases, including global
+bindkey -M emacs " " magic-space
+bindkey -M viins " " magic-space
+
+# space to make a normal space
+bindkey -M emacs "^ " globalias
+bindkey -M viins "^ " globalias
