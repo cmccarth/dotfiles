@@ -2,6 +2,6 @@ function cat --description "Show contents of file with bat if available, cat if 
     if test (which bat)
         bat --style plain $argv
     else
-        cat $argv
+        /bin/cat $argv
     end
 end
