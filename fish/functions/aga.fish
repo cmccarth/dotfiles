@@ -1,3 +1,3 @@
-function aga --description 'alias aga=ssh chris@agathon.mathworks.com'
+function aga --description "Connect to agathon"
 	ssh chris@agathon.mathworks.com $argv;
 end

@@ -1,3 +1,3 @@
-function c -d "Clear the screen"
+function c --description "Clear the screen"
     clear
 end

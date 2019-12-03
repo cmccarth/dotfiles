@@ -1,3 +1,3 @@
-function dnsq --description 'alias dnsq=host -t axfr mathworks.com | grep -i'
+function dnsq --description "Search mathworks.com DNS records"
 	host -t axfr mathworks.com | grep -i $argv;
 end

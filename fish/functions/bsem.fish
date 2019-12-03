@@ -1,3 +1,3 @@
-function bsem --description 'alias bsem=ssh root@bsemaster'
+function bsem --description "Connect to bsemaster"
 	ssh root@bsemaster $argv;
 end
