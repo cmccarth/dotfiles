@@ -134,3 +134,5 @@ if [[ -d $PYENV_ROOT ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

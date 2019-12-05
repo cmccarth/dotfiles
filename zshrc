@@ -193,3 +193,5 @@ bindkey -M viins " " magic-space
 # space to make a normal space
 bindkey -M emacs "^ " globalias
 bindkey -M viins "^ " globalias
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
