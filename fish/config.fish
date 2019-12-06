@@ -13,3 +13,7 @@ fish_vi_key_bindings
 
 # Disable virtualenv in prompt when using bobthefish
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# https://brettterpstra.com/2019/11/11/fish-further-exploration/
+abbr -a -U -- - prevd
+abbr -a -U -- = nextd
