@@ -1,4 +1,3 @@
-syntax on
 if has("autocmd")
   filetype indent plugin on
 endif
@@ -13,3 +12,5 @@ set smarttab
 set softtabstop=4
 set tabstop=4
 execute pathogen#infect()
+colo old-hope
+syntax on
