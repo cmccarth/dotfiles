@@ -129,29 +129,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias aga="ssh -x chris@agathon.mathworks.com"
-alias ans='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible'
-alias ansv='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-vault'
-alias ap='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base ansible-playbook'
-alias bsem="ssh -x root@bsemaster"
-alias c="clear"
-alias ceph='docker run --rm -it -e MONITOR_HOSTS="$(cat /etc/ceph/ceph_monitor_hosts)" -e CEPH_KEYRING_BASE64="$(cat /etc/ceph/ceph.client.admin.keyring | base64)" docker.bserepo.mathworks.com/flaviostutz/ceph-client:latest ceph'
-alias cleanssh='ssh-keygen -R $(history -p !$)'
-alias da='docker run --rm -it -v "${PWD}:/playbook" -v "${HOME}/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/dynapro-ansible-exec'
-alias deb10="ssh -x cmccarth@ah-cmccarth-l.mathworks.com"
-alias deb9="ssh -x cmccarth@cmccarth-deb9-64.mathworks.com"
-alias dhcphost="host -l dhcp.mathworks.com | grep -i "
-alias dnsq="host -t axfr mathworks.com | grep -i "
-alias dynastat='ssh -l root -t dynapro tmuxinator start dynastat'
-alias gla="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/glance-client"
-alias ka='docker run --rm -it -v ~/git/kolla-ansible:/kolla-ansible -v ~/git/kolla-config:/etc/kolla -v ~/.ssh/ka:/root/.ssh docker.bserepo.mathworks.com/cmccarth/kolla-ansible-exec'
-alias kk=kubectl
-alias lin='ssh -l root -i ~/.ssh/linode20171122 li1272-155.members.linode.com'
-alias nov="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
-alias os="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cloud/openstack-client --os-cloud"
-alias p='bm bat-pool'
-alias p4dir="cd /mathworks/devel/sandbox/cmccarth/scm/perforce"
-alias ytd='docker run --rm -u $(id -u):$(id -g) -v $PWD:/data vimagick/youtube-dl'
+if [[ -f $HOME/.aliases ]]; then
+    source $HOME/.aliases
+fi
 
 export PYENV_ROOT=$HOME/.pyenv
 
