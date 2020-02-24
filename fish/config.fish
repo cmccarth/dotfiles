@@ -1,5 +1,11 @@
 set PATH {$HOME}/bin $PATH
 
+if uname | grep Darwin > /dev/null 2>&1; and uname -r | grep '^19' > /dev/null 2>&1
+    set -x LOCALDIR $HOME/local
+else
+    set -x LOCALDIR /local
+end
+
 set PYENV_ROOT $HOME/.pyenv
 
 if test -d $PYENV_ROOT
