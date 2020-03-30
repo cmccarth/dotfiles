@@ -13,9 +13,9 @@ if test -d $PYENV_ROOT
     pyenv rehash
 end
 
-if status is-interactive
-    fish_vi_key_bindings
-end
+#if status is-interactive
+    #fish_vi_key_bindings
+#end
 
 if not set -q SSH_CLIENT; or not set -q SSH_TTY
     set -Ux EDITOR "code -w"
