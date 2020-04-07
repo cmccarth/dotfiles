@@ -17,9 +17,7 @@ end
     #fish_vi_key_bindings
 #end
 
-if not set -q SSH_CLIENT; or not set -q SSH_TTY
-    set -Ux EDITOR "code -w"
-else if which vim > /dev/null 2>&1
+if which vim > /dev/null 2>&1
     set -Ux EDITOR "vim"
 else
     set -Ux EDITOR "vi"
