@@ -29,3 +29,5 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 # https://brettterpstra.com/2019/11/11/fish-further-exploration/
 abbr -a -U -- - prevd
 abbr -a -U -- = nextd
+
+set -g theme_color_scheme light
