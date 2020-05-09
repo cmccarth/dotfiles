@@ -1,3 +1,7 @@
+if [[ $TMUX ]]; then
+    exec fish
+fi
+
 if [[ -f /etc/bashrc ]]; then
     source /etc/bashrc
     unset PROMPT_COMMAND
