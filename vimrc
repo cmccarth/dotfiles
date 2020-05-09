@@ -2,7 +2,6 @@ if has("autocmd")
   filetype indent plugin on
 endif
 nnoremap <silent> <F4> :set cursorline!<CR>
-set background=light
 set cursorline
 set expandtab
 set nocompatible
@@ -12,3 +11,4 @@ set softtabstop=4
 set tabstop=4
 execute pathogen#infect()
 syntax on
+colorscheme old-hope

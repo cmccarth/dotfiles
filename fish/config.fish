@@ -30,4 +30,3 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 abbr -a -U -- - prevd
 abbr -a -U -- = nextd
 
-set -g theme_color_scheme light
