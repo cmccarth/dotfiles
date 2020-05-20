@@ -1,3 +1,7 @@
+if [[ $TMUX ]]; then
+    exec fish
+fi
+
 if [[ -z "$SSH_CLIENT" ]] || [[ -z "$SSH_TTY" ]]; then
     MYEDITOR="code -w"
 elif which vim > /dev/null 2>&1; then
