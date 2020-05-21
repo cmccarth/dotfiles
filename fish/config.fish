@@ -32,6 +32,6 @@ abbr -a -U -- = nextd
 
 if cd $HOME/git/dotfiles && git remote update > /dev/null 2>&1 && git status -uno | grep -q '^Your branch is behind'
     echo "Local dotfiles repo is behind and should be pulled"
-end
+end; cd $HOME
 
 set -g theme_color_scheme light
