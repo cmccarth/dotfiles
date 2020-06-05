@@ -30,8 +30,10 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 abbr -a -U -- - prevd
 abbr -a -U -- = nextd
 
-if cd $HOME/git/dotfiles && git remote update > /dev/null 2>&1 && git status -uno | grep -q '^Your branch is behind'
-    echo "Local dotfiles repo is behind and should be pulled"
-end; cd $HOME
+if hostname | egrep -qs '(coruscant|korriban|corellia|ah-cmccarth)'
+    if cd $HOME/git/dotfiles && git remote update > /dev/null 2>&1 && git status -uno | grep -q '^Your branch is behind'
+        echo "Local dotfiles repo is behind and should be pulled"
+    end; cd $HOME
+end
 
 set -g theme_color_scheme light
