@@ -1,3 +1,3 @@
 function ans --description "Run ansible in Docker container"
-    docker run --rm -it -v (pwd -P):/playbook -v "$LOCALDIR/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base:20200521 ansible $argv;
+    docker run --rm -it -v (pwd -P):/playbook -v "$LOCALDIR/.ssh:/root/.ssh" docker.bserepo.mathworks.com/cloud/ansible-base:20200608 ansible $argv;
 end
