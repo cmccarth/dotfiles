@@ -17,3 +17,4 @@ alias kk=kubectl
 alias nov="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cmccarth/nova-client"
 alias os="docker run --rm -v /private/etc/openstack/clouds.yaml:/clouds.yaml docker.bserepo.mathworks.com/cloud/openstack-client --os-cloud"
 alias p='bm bat-pool'
+alias tmatm='tmux attach -t main'
