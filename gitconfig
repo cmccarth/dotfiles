@@ -18,3 +18,5 @@
     cmd = /Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge -left $LOCAL -right $REMOTE
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+[commit]
+	verbose = true
