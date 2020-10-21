@@ -20,3 +20,5 @@
 	textconv = ansible-vault view
 [commit]
 	verbose = true
+[gitreview]
+	username = cmccarth
