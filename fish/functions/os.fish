@@ -1,4 +1,4 @@
-function os --description "Run openstack command in Docker container"
+function os3 --description "Run openstack command in openstack-clients container"
     docker run \
         --rm \
         --volume=/private/etc/openstack/clouds.yaml:/clouds.yaml \
@@ -6,6 +6,10 @@ function os --description "Run openstack command in Docker container"
         --dns=172.30.237.9 \
         --dns-search=mathworks.com \
         --dns-search=dhcp.mathworks.com \
-        docker.bserepo.mathworks.com/cloud/openstack-client \
-        --os-cloud $argv;
+        --env HOST_UID=(id -u) \
+        --env HOST_GID=(id -g) \
+        docker.bserepo.mathworks.com/cloud/openstack/openstack-clients:20201116 \
+        $argv[1] \
+        openstack \
+        $argv[2..-1]
 end
