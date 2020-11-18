@@ -1,4 +1,4 @@
-function nov3 --description "Run nova command in openstack-clients container"
+function nov --description "Run nova command in openstack-clients container"
     docker run \
         --rm \
         --volume=/private/etc/openstack/clouds.yaml:/clouds.yaml \

@@ -1,4 +1,4 @@
-function gla3 --description "Run glance command in openstack-clients container"
+function gla --description "Run glance command in openstack-clients container"
     docker run \
         --rm \
         --volume=/private/etc/openstack/clouds.yaml:/clouds.yaml \

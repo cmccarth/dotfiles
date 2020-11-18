@@ -1,4 +1,4 @@
-function os3 --description "Run openstack command in openstack-clients container"
+function os --description "Run openstack command in openstack-clients container"
     docker run \
         --rm \
         --volume=/private/etc/openstack/clouds.yaml:/clouds.yaml \
