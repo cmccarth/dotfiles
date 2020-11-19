@@ -9,6 +9,8 @@ function ansv --description "Run ansible-vault in Docker container"
         --dns=172.30.237.9 \
         --dns-search=mathworks.com \
         --dns-search=dhcp.mathworks.com \
-        docker.bserepo.mathworks.com/cloud/ansible-base:20200608 \
+        --env HOST_UID=(id -u) \
+        --env HOST_GID=(id -g) \
+        docker.bserepo.mathworks.com/cloud/ansible-base:20201116 \
         ansible-vault $argv;
 end
