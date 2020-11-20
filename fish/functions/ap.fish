@@ -4,7 +4,7 @@ function ap --description "Run ansible-playbook in Docker container"
         --interactive \
         --tty \
         --volume=(pwd -P):/playbook \
-        --volume="$LOCALDIR/.ssh:/root/.ssh" \
+        --volume="$LOCALDIR/.ssh:/playbook/.ssh" \
         --dns=172.30.237.8 \
         --dns=172.30.237.9 \
         --dns-search=mathworks.com \
