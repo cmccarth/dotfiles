@@ -1,6 +1,6 @@
 set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin $PATH
 
-if uname | grep Darwin > /dev/null 2>&1; and uname -r | grep '^19' > /dev/null 2>&1
+if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
 else
     set -x LOCALDIR /local
