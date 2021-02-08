@@ -4,7 +4,7 @@ function ansv --description "Run ansible-vault in Docker container"
         --interactive \
         --tty \
         --volume=(pwd -P):/playbook \
-        --volume="$LOCALDIR/.ssh:/root/.ssh" \
+        --volume="$HOME:/playbook/.ssh" \
         --dns=172.30.237.8 \
         --dns=172.30.237.9 \
         --dns-search=mathworks.com \
