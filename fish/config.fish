@@ -13,9 +13,9 @@ if test -d $PYENV_ROOT
     pyenv rehash
 end
 
-#if status is-interactive
-    #fish_vi_key_bindings
-#end
+if status is-interactive
+    fish_vi_key_bindings
+end
 
 if which vim > /dev/null 2>&1
     set -Ux EDITOR "vim"
