@@ -2,6 +2,7 @@ set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/ap
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
+    set -x FLAGS_GETOPT_CMD /usr/local/opt/gnu-getopt/bin/getopt
 else
     set -x LOCALDIR /local
 end
@@ -38,4 +39,3 @@ end
 
 set -g theme_color_scheme light
 
-set -x FLAGS_GETOPT_CMD (brew --prefix gnu-getopt)/bin/getopt
