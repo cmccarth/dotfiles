@@ -1,3 +1,3 @@
-function os --description "Run openstack command installed in pyenv"
-    $HOME/.pyenv/shims/openstack --os-cloud $argv
+function os --description "Run openstack command installed in venv"
+    $HOME/.venv/openstack-client/bin/openstack --os-cloud $argv
 end
