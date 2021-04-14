@@ -1,3 +1,3 @@
-function ans --description "Run ansible installed in pyenv"
-    $HOME/.pyenv/shims/ansible $argv;
+function ans --description "Run ansible installed in venv"
+    $HOME/.venv/ansible/bin/ansible $argv;
 end
