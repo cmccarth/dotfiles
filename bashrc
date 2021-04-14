@@ -21,8 +21,9 @@ HISTTIMEFORMAT="%F %T "
 # So Perforce doesn't get confused...
 shopt -u interactive_comments
 
-export PATH="$HOME/bin:/usr/local/netbin:/usr/local/bin:/opt/local/bin:/hub/share/bin:$HOME/.gem/ruby/1.8/bin:/Applications/p4merge.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/mathworks/hub/share/apps/bat/stable/share/"
+export PATH="$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/netbin:/usr/local/bin:/opt/local/bin:/hub/share/bin:$HOME/.gem/ruby/1.8/bin:/Applications/p4merge.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/mathworks/hub/share/apps/bat/stable/share/"
 export MANPATH="${MANPATH}:/local/share/man:/usr/local/share/man"
+export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt"
 
 export P4USER="cmccarth"
 export PAGER="less -R"

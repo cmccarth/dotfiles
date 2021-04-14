@@ -1,4 +1,4 @@
-set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin $PATH
+set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin (brew --prefix gnu-getopt)/bin $PATH
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
@@ -37,3 +37,5 @@ if hostname | egrep -qs '(coruscant|korriban|corellia|ah-cmccarth)'
 end
 
 set -g theme_color_scheme light
+
+set -x FLAGS_GETOPT_CMD (brew --prefix gnu-getopt)/bin/getopt
