@@ -1,4 +1,4 @@
-set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin $PATH
+set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin $PATH
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
