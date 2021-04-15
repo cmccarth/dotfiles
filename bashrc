@@ -119,3 +119,10 @@ if [[ -d $PYENV_ROOT ]]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+ka()
+{
+    source $HOME/.venv/kolla-ansible/bin/activate
+    kolla-ansible --inventory $HOME/git/kolla-config/inventory --configdir $HOME/git/kolla-config --passwords $HOME/git/kolla-config/passwords.yml "$*" 
+    deactivate
+}
