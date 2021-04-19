@@ -1,4 +1,4 @@
-function ans --description "Run ansible in Docker container"
+function ans2 --description "Run ansible in Docker container"
     docker run \
         --rm \
         --interactive \

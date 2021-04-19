@@ -1,4 +1,4 @@
-function ap --description "Run ansible-playbook in Docker container"
+function ap2 --description "Run ansible-playbook in Docker container"
     docker run \
         --rm \
         --interactive \

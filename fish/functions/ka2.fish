@@ -1,4 +1,4 @@
-function ka --description "Run kolla-ansible in Docker container"
+function ka2 --description "Run kolla-ansible in Docker container"
 	docker run \
 		--rm \
         --interactive \
