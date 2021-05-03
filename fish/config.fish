@@ -1,4 +1,4 @@
-set PATH {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin $PATH
+set PATH {$HOME}/.poetry/bin {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin $PATH
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
@@ -38,4 +38,3 @@ if hostname | egrep -qs '(coruscant|korriban|corellia|ah-cmccarth)'
 end
 
 set -g theme_color_scheme light
-
