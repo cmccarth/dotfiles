@@ -1,5 +1,15 @@
-function ka --description "Run kolla-ansible installed in venv"
-    source $HOME/.venv/kolla-ansible/bin/activate.fish
-	kolla-ansible --inventory $HOME/git/kolla-config/inventory --configdir $HOME/git/kolla-config --passwords $HOME/git/kolla-config/passwords.yml $argv
-    deactivate
+function ka2 --description "Run kolla-ansible in Docker container"
+	docker run \
+		--rm \
+        --interactive \
+        --tty \
+        --volume="$LOCALDIR/cmccarth/kolla-ansible:/kolla-ansible" \
+		--volume="$LOCALDIR/cmccarth/kolla-config:/etc/kolla" \
+        --volume="$LOCALDIR/.ssh:/root/.ssh" \
+        --dns=172.30.237.8 \
+        --dns=172.30.237.9 \
+        --dns-search=mathworks.com \
+        --dns-search=dhcp.mathworks.com \
+		docker.bserepo.mathworks.com/cloud/openstack/kolla-ansible-exec:20200624 \
+		$argv;
 end
