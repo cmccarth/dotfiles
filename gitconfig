@@ -22,3 +22,5 @@
 	verbose = true
 [gitreview]
 	username = cmccarth
+[pull]
+	rebase = false
