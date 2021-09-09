@@ -37,4 +37,4 @@ if hostname | egrep -qs '(coruscant|korriban|alderaan|ah-cmccarth)'
     end; cd $HOME
 end
 
-set -g theme_color_scheme light
+set -g theme_color_scheme dark
