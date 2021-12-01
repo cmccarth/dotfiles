@@ -7,6 +7,13 @@ else
     set -x LOCALDIR /local
 end
 
+if hostname | grep alderaan > /dev/null 2>&1
+    if ssh-add -l | grep "The agent has no identities" > /dev/null 2>&1
+        ssh-add
+        ssh-add /Users/chris/.ssh/github_rsa
+    end
+end
+
 set PYENV_ROOT $HOME/.pyenv
 
 if test -d $PYENV_ROOT
