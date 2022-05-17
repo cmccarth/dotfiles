@@ -25,7 +25,9 @@ end
 #     fish_vi_key_bindings
 # end
 
-if which vim > /dev/null 2>&1
+if hostname | grep alderaan > /dev/null 2>&1
+    set -Ux EDITOR "code -w"
+else if which vim > /dev/null 2>&1
     set -Ux EDITOR "vim"
 else
     set -Ux EDITOR "vi"
