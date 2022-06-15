@@ -9,8 +9,8 @@ end
 
 if hostname | grep alderaan > /dev/null 2>&1
     if ssh-add -l | grep "The agent has no identities" > /dev/null 2>&1
-        ssh-add
-        ssh-add /Users/chris/.ssh/github_rsa
+        ssh-add --apple-load-keychain
+        ssh-add --apple-load-keychain /Users/chris/.ssh/github_rsa
     end
 end
 
