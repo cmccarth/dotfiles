@@ -11,4 +11,3 @@ set softtabstop=4
 set tabstop=4
 execute pathogen#infect()
 syntax on
-colorscheme nova
