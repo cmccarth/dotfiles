@@ -7,7 +7,7 @@ else
     set -x LOCALDIR /local
 end
 
-if hostname | grep alderaan > /dev/null 2>&1
+if hostname | grep kamino > /dev/null 2>&1
     if ssh-add -l | grep "The agent has no identities" > /dev/null 2>&1
         ssh-add --apple-load-keychain
         #ssh-add --apple-load-keychain /Users/chris/.ssh/github_rsa
@@ -25,7 +25,7 @@ end
 #     fish_vi_key_bindings
 # end
 
-if hostname | grep alderaan > /dev/null 2>&1
+if hostname | grep kamino > /dev/null 2>&1
     set -Ux EDITOR "code -w"
 else if which vim > /dev/null 2>&1
     set -Ux EDITOR "vim"
@@ -40,7 +40,7 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 abbr -a -U -- - prevd
 abbr -a -U -- = nextd
 
-if hostname | egrep -qs '(coruscant|korriban|alderaan|ah-cmccarth)'
+if hostname | egrep -qs '(coruscant|korriban|kamino|ah-cmccarth)'
     if cd $HOME/git/dotfiles && git remote update > /dev/null 2>&1 && git status -uno | grep -q '^Your branch is behind'
         echo "Local dotfiles repo is behind and should be pulled"
     end; cd $HOME
