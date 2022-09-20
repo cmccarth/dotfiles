@@ -1,4 +1,6 @@
 function deb --description "Connect to Debian machine"
-    echo -ne "\033]0;deb\007"
+    if ! pgrep -q openconnect
+        vpn
+    end
     mosh cmccarth@ah-cmccarth3-l.mathworks.com $argv;
 end
