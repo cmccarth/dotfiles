@@ -1,4 +1,4 @@
-set PATH {$HOME}/.poetry/bin {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin {$HOME}/go/bin $PATH
+set PATH /opt/homebrew/bin /opt/homebrew/sbin {$HOME}/.poetry/bin {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin {$HOME}/go/bin $PATH
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
@@ -37,8 +37,10 @@ end
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # https://brettterpstra.com/2019/11/11/fish-further-exploration/
-abbr -a -U -- - prevd
-abbr -a -U -- = nextd
+#abbr -a -U -- - prevd
+#abbr -a -U -- = nextd
+abbr -a -- - prevd
+abbr -a -- = nextd
 
 if hostname | egrep -qs '(coruscant|korriban|kamino|ah-cmccarth)'
     if cd $HOME/git/dotfiles && git remote update > /dev/null 2>&1 && git status -uno | grep -q '^Your branch is behind'
