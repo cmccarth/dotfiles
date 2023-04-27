@@ -54,3 +54,5 @@ set -g theme_color_scheme light
 if which kubectl > /dev/null 2>&1
     kubectl completion fish | source
 end
+
+set -x VAULT_ADDR "https://vow-lsbat.mathworks.com"
