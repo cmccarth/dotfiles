@@ -1,4 +1,4 @@
-set PATH /opt/homebrew/bin /opt/homebrew/sbin {$HOME}/.poetry/bin {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin {$HOME}/go/bin $PATH
+set PATH /opt/homebrew/bin /opt/homebrew/sbin /usr/local/bin /usr/local/sbin {$HOME}/.poetry/bin {$HOME}/bin /Applications/Visual\ Studio Code.app/Contents/Resources/app/bin /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/gnu-getopt/bin {$HOME}/go/bin $PATH
 
 if uname | grep Darwin > /dev/null 2>&1
     set -x LOCALDIR $HOME/local
@@ -19,6 +19,7 @@ set PYENV_ROOT $HOME/.pyenv
 if test -d $PYENV_ROOT
     set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
     pyenv rehash
+    pyenv init - | source
 end
 
 # if status is-interactive
