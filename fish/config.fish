@@ -49,7 +49,7 @@ if hostname | egrep -qs '(coruscant|korriban|kamino|ah-cmccarth)'
     end; cd $HOME
 end
 
-set -g theme_color_scheme dark
+set -g theme_color_scheme light
 
 if which kubectl > /dev/null 2>&1
     kubectl completion fish | source

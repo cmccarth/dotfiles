@@ -1,5 +1,5 @@
 [user]
-        name = Christopher McCarthy
+	name = Christopher McCarthy
 	email = cmccarth@mathworks.com
 [core]
         excludesfile = ~/.gitignore_global
