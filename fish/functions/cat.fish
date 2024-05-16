@@ -5,7 +5,11 @@ function cat --description "Show contents of file with bat if available, with ca
         set -x BAT_COMMAND batcat
     end
     if test -n $BAT_COMMAND
-        $BAT_COMMAND --style plain --theme "ansi" $argv
+        if test $BAT_COMMAND = bat
+            $BAT_COMMAND --style plain --theme "ansi" $argv
+        else
+            $BAT_COMMAND --style plain --theme "ansi-light" $argv
+        end
     else
         /bin/cat $argv
     end
