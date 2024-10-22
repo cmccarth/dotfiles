@@ -2,5 +2,5 @@ function kubegit_pilot --description "kubectl for GitHub Actions runners TEST EK
     if not contains -- --namespace $argv
         set -p argv --namespace=arc-pilot
     end
-    kubectl --kubeconfig=$HOME/.kube/github_test $argv
+    kubectl --kubeconfig=$HOME/.kube/github_test_130 $argv
 end
