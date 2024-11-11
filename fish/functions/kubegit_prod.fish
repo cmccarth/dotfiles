@@ -2,5 +2,5 @@ function kubegit_prod --description "kubectl for GitHub Actions runners PROD EKS
     if not contains -- --namespace $argv
         set -p argv --namespace=arc-prod
     end
-    kubectl --kubeconfig=$HOME/.kube/github_prod $argv
+    kubectl --kubeconfig=$HOME/.kube/github_prod_130 $argv
 end
