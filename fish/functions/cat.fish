@@ -8,7 +8,7 @@ function cat --description "Show contents of file with bat if available, with ca
         if test $BAT_COMMAND = bat
             $BAT_COMMAND --style plain --theme "ansi" $argv
         else
-            $BAT_COMMAND --style plain --theme "ansi-light" $argv
+            $BAT_COMMAND --style plain --theme "Solarized (light)" $argv
         end
     else
         /bin/cat $argv
